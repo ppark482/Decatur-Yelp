@@ -3,8 +3,8 @@
 	'use strict';
 
 	angular.module('decaturApp')
-		.factory('YelpApi', ['$http',
-			function ($http) {
+		.factory('YelpApi', ['$http', '$window',
+			function ($http, $window) {
 
 				var randomString = function (length, chars) {
 					var result = '';
