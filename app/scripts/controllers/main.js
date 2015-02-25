@@ -10,8 +10,8 @@
 	 * Controller of the decaturApp
 	 */
 	angular.module('decaturApp')
-	  .controller('MainCtrl', ['$scope', 'YelpApi', '$window',
-	  	function ($scope, YelpApi, $window) {
+	  .controller('MainCtrl', ['$scope', 'YelpApi', '$window', '$rootScope',
+	  	function ($scope, YelpApi, $window, $rootScope) {
 
 	  		// $scope.restaurants = [];
 
@@ -20,15 +20,18 @@
 	  		// 	console.log($scope.restaurants);
 	  		// });
 
-	  	$scope.restaurants = $window.restaurants;
+	  	$rootScope.$on('back-home', function () {
+	  		console.log($scope.restaurants);
+	  	});
 
 	  	YelpApi.retrieveYelp('', function (data) {
 	  		$window.restaurants = data.businesses;
-	  		console.log($window.restaurants);
 	  		$scope.restaurants = $window.restaurants;
-	  	})
+	  		console.log($scope.restaurants);
+	  	});
 
 	  	}
+
 	  ]); // end controller
 
 }()); // end iife

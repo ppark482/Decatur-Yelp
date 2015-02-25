@@ -9,9 +9,15 @@
 	 * Controller of the decaturApp
 	 */
 	angular.module('decaturApp')
-	  .controller('MapCtrl', ['$scope',
-	  	function ($scope) {
+	  .controller('MapCtrl', ['$scope', '$rootScope',
+	  	function ($scope, $rootScope) {
 
+
+	  		console.log('MapCtrl');
+
+	  		$scope.repopulate = function () {
+	  			$rootScope.$broadcast('back-home');
+	  		};
 
 
 	  	}
