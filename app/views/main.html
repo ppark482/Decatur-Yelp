@@ -1,6 +1,9 @@
 <section id="ajc-content">
 	<h2>AJC Restaurant Reviews in <span class="locale">Decatur</span></h2>
-
+	<!-- <p class='target'></p> -->
+	<ul>
+		<li ng-repeat="feed in ajc">{{ content }} + {{ link }} + {{ author }}</li>
+	</ul>
 </section>
 
 
@@ -10,7 +13,7 @@
 
 		<li ng-repeat="place in restaurants | orderBy : '-rating'" class="place-listing">
 			<a href="{{ place.url }}" target="_blank">
-				<!-- <img class="restaurant-thumbnail" src="{{ place.image_url }}"> -->
+				<img class="restaurant-thumbnail" src="{{ place.image_url }}">
 				<ul class="listing-info">
 					<li class="restaurant-name">{{ place.name }}</li>
 					<li>Phone: {{ place.display_phone }}</li>
@@ -20,9 +23,9 @@
 					</li>
 					<li>Categories: <span ng-repeat="category in place.categories">/ {{ category[0] }} /</span></li>
 					<li class="review-snippet">{{ place.snippet_text }}</li>
-<!-- 					<li class="rating">Rating: 
+					<li class="rating">Rating: 
 						<img class="rating-stars" src="{{ place.rating_img_url }}"> based on <span class="review-count">{{ place.review_count }}</span> Reviews
-					</li> -->
+					</li>
 				</ul>
 			</a>
 		</li>

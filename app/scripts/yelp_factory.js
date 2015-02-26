@@ -48,7 +48,7 @@
 	    		retrieveYelp: retrieveYelp      
 	      };
 
-			} // end function
+			} // end function block
 
 		]); // end factory
 
