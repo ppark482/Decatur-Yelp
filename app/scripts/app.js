@@ -30,10 +30,11 @@
         .when('/about', {
           templateUrl: 'views/about.html',
           controller: 'AboutCtrl'
-        });
+        })
+        .otherwise({ redirectTo: '/'});
 
          // use the HTML5 History API
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
     }); // end config
 

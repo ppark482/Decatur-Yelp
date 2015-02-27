@@ -5,10 +5,10 @@
 		<li ng-repeat="feed in ajc" class="ajc-listing">
 			<img class="ajc-thumbnail" src="{{ feed.mediaGroups[0].contents[0].url }}"></img>
 			<ul class="listing-info">
-				<li class="restaurant-name"><a href="{{ feed.link }}">{{ feed.title }}</a></li>
+				<li class="restaurant-name"><a href="{{ feed.link }}" target="_blank">{{ feed.title }}</a></li>
 				<li class="review-snippet">
 
-					{{ feed.contentSnippet }} <span><a class="see-more" href="{{ feed.link }}">more ...</a></span>
+					{{ feed.contentSnippet }} <span><a class="see-more" href="{{ feed.link }}" target="_blank">more ...</a></span>
 
 				</li>
 				<li><p>By: {{ feed.author }}</p></li>
