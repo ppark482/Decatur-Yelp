@@ -46,12 +46,15 @@
 
 	  	// $scope.getAJC();
 
-	  	AjcFeed.loadFeed();
+	  	AjcFeed.loadFeed().then(function (results) {
+	  		console.log(results.feed.entries);
+	  		$scope.ajc = results.feed.entries;
+	  	});
 
 	  	YelpApi.retrieveYelp('', function (data) {
 	  		$window.restaurants = data.businesses;
 	  		$scope.restaurants = $window.restaurants;
-	  		console.log($scope.restaurants);
+	  		// console.log($scope.restaurants);
 	  	});
 
 	  	} // end function block
