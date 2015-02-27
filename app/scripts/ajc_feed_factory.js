@@ -6,6 +6,8 @@
 		.factory('AjcFeed', ['$http', '$window', '$q',
 			function ($http, $window, $q) {
 
+
+				
 		  	// var feed = new google.feeds.Feed('http://www.accessatlanta.com/list/rss-mobile/entertainment/restaurants/featured-atlanta-restaurants/aMT5/');
 
 		  	var feed = new google.feeds.Feed('http://www.ajc.com/flist/entertainment/restaurants/restaurant-review/fmn/rss/');

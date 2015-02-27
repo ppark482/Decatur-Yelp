@@ -2,8 +2,18 @@
 	<h2>AJC Restaurant Reviews in <span class="locale">Decatur</span></h2>
 	<!-- <p class='target'></p> -->
 	<ul>
-		<li ng-repeat="feed in ajc">
-			<p>{{ feed.link }} + {{ feed.author }} + {{ feed.title }} + {{ feed.contentSnippet }}</p></li>
+		<li ng-repeat="feed in ajc" class="ajc-listing">
+			<img class="ajc-thumbnail" src="{{ feed.mediaGroups[0].contents[0].url }}"></img>
+			<ul class="listing-info">
+				<li class="restaurant-name"><a href="{{ feed.link }}">{{ feed.title }}</a></li>
+				<li class="review-snippet">
+
+					{{ feed.contentSnippet }} <span><a class="see-more" href="{{ feed.link }}">more ...</a></span>
+
+				</li>
+				<li><p>By: {{ feed.author }}</p></li>
+				</ul>
+		</li>
 	</ul>
 </section>
 
